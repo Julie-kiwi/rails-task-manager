@@ -1,0 +1,19 @@
+<h1>My tasks</h1>
+
+
+<% @tasks.each do |task| %>
+  <div class = "container">
+    <% if !task.completed %>
+      <h3><i class="far fa-square"></i>
+      <%= link_to task.title, task_path(task) %> · <i class="far fa-trash-alt"></i></h3>
+    <% else %>
+      <h3><i class="far fa-check-square"></i>
+      <%= link_to task.title, task_path(task) %> · <i class="far fa-trash-alt"></i></h3>
+
+    <% end %>
+
+  </div>
+<% end %>
+</form>
+
+<h3><%= link_to "   Create a new task", tasks_new_path , :class => "fas fa-plus"%></h3>
